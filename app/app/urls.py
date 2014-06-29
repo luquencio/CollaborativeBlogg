@@ -8,9 +8,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'app.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^home/$', 'app2.views.home', name ='home'),
-    url(r'^post/(\d{1,2})/$', 'app2.views.post', name ='post'), 
-
-
+    url(r'^admin/', include(admin.site.urls)), 
+    url(r'^$', 'app2.views.hora_actual', name ='hora_actual'),
+ 
 )

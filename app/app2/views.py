@@ -1,17 +1,14 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-import urllib
+from django.template.loader import get_template
+from django.template import Context
+from datetime import datetime 
+
 
 # Create your views here.
-
-def home(request):
-	f = urllib.request.urlopen("http://google.com")
-	g = f.read()
-	f.close()
-
-	return HttpResponse(g)
-
-
-def post(request,id_post):
-	html = post.object.get(pk = id).title
-	return HttpResponse(html)
+def hora_actual(request):
+	ahora = datetime.now()
+	t = get_template('hora.html')
+	c = Context({'hora':ahora})
+	html = t.render(c)
+	return HttpResponse(html)  
