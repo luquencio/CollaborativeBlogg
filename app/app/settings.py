@@ -18,7 +18,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'u+fi&$+9a8m0t2%5s0w=1m$n5a0ov^d+j2$af_7jpyiq%osmoj'
-
+ 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -66,7 +66,7 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-DR'
 
 TIME_ZONE = 'UTC'
 
