@@ -30,7 +30,7 @@
 			{% for cat in categorias %}
 			    <li><a href="{% url "categoria" cat.pk %}">{{cat}}</a></li>
 			{% endfor %}
-			<li id="publicar_nav"><a href="{% url "add" %}">Publicar</a></li>
+			<li id="publicar_nav"><a href="{% url "add" %}">Añadir </a></li>
 		</ul>
 	</nav>
 	<aside id="bienvenida">
@@ -42,6 +42,14 @@
 		{% endif %}
 	</aside>
 	<section id="contenido">
+		<form method="post">
+			<div id="form">
+				{%csrf_token%}
+				{{form.as_p}}
+				<input type="submit">
+		</form>
+	</div>
+</section>
 	    {% if enlaces %}
 	    
 	    {% for enlace in enlaces %}

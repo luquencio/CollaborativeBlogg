@@ -1,4 +1,8 @@
 from django import forms
 from django.forms import ModelForm
-from models import *
+from app2.models import *
 
+class EnlaceForm(ModelForm):
+	class Meta:
+		model = Enlace
+		exclude = ("votos",)  

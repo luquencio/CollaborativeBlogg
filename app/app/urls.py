@@ -13,6 +13,9 @@ urlpatterns = patterns('',
 	url(r'^$', 'app2.views.home', name ='home'),
 	url(r'^plus/(\d+)$', 'app2.views.plus', name ='plus'),
 	url(r'^minus/(\d+)$', 'app2.views.minus', name ='minus'),
+	url(r'^categoria/(\d+)$', 'app2.views.categoria', name ='categoria'),
+	url(r'^add/$', 'app2.views.add', name ='add'),
+
     url(r'^admin/', include(admin.site.urls)), 
  
 )

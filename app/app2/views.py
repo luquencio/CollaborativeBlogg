@@ -6,7 +6,8 @@ from datetime import datetime
 from django.shortcuts import render_to_response
 from app2.models import * 
 from django.shortcuts import get_object_or_404
-
+from app2.forms import * 
+from django.template.context import RequestContext
 
 # Create your views here.
 
@@ -41,12 +42,17 @@ def categoria(request, id_categoria):
 	return render_to_response(template, locals())
 
 def add(request):
-	if request.method == "POST":
+	categorias = Categoria.objects.all()
+	
+	if request.method == 'POST':
 		form = EnlaceForm(request.POST)
-		if form.is_valid():
-			enlace = form.save(commit=False)
-			enlace.usuario = request.user
-			enlace.save()
+		if form.is_valid(): 
+			form.save()
+
 			return HttpResponseRedirect("/")
 	else:
-		form = EnlaceForm()
+		form = EnlaceForm() 
+
+	template = "form.html"
+	return render_to_response(template,
+		context_instance = RequestContext(request,locals()))
