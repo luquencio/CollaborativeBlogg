@@ -41,15 +41,6 @@
 		<p id="mensaje_registro">Registrate</p>
 		{% endif %}
 	</aside>
-	<section id="contenido">
-		<form method="post">
-			<div id="form">
-				{%csrf_token%}
-				{{form.as_p}}
-				<input type="submit">
-		</form>
-	</div>
-</section>
 	    {% if enlaces %}
 	    
 	    {% for enlace in enlaces %}
