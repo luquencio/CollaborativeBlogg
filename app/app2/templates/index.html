@@ -39,6 +39,8 @@
 		<p>Importas. Registrate</p>
 		<a id="registro" href="#">Registrate aqui</a>
 		<p id="mensaje_registro">Registrate</p>
+		{% else %}
+		Hola {{request.user}}
 		{% endif %}
 	</aside>
 	    {% if enlaces %}
@@ -62,7 +64,7 @@
 			<p class="votacion">
 				<a class="up" href="{% url "plus" enlace.pk %}"></a>
 				{{enlace.votos}}
-				<a class="down" href="{% url "minus" enlace.pk %}"></a>
+				<a class="down" href="{% url "minus" enlace.pk %}"></ a>
 			</p>
 		</article>
 		{% endfor %}
